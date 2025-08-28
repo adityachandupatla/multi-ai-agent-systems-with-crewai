@@ -1,0 +1,75 @@
+
+Compared to traditional software development, the AI-software development has fuzzy inputs/outputs and fuzzy transformations. The responses are also probabilistic instead of stochastic
+
+Here we define an agent as:
+
+	An LLM which takes in a task, prompts itself multiple times to accomplish the task (similar to ChatGPT deep-research) and outputs the answer / produces results. While doing so it also has access to tools which will enhance the capabilities of the model. With tools, instead of being restricted to generating text, it can also perform actions such as: browsing, transacting, updating external stores, etc
+
+	[!!!IMPORTANT!!!] Empirically, agents perform better when they are role-playing! So give the agents a personality (& also a goal) to steer the LLM to become an expert in a certain domain. [!!!IMPORTANT!!!]
+
+Multi-agent systems:
+
+	A single agent cannot always accomplish everything you need. Similar to how humans organize themselves in societies and enterprises, AI agents can be specialized to perform certain tasks and coordinate among themselves to accomplish broader, more complex, goals.
+
+CrewAI - Open source agentic framework and platform
+
+	- Out of the box patterns
+
+	- Many skills/tools usable by agents and executable in serial or parallel fashion
+
+	- Customize agents easily
+
+	- Productionizing capability
+
+Anatomy of an agent
+
+	- Role Playing
+
+		We shouldn't just be using blanket roles like:
+		- Researcher
+		- Writer
+		- Financial Analyst
+
+		Instead, we need to leverage the power of vocabulary and world knowledge and define:
+		- HR Research Specialist
+		- Senior Copywriter
+		- FINRA approved analyst
+
+	- Focus
+
+		This is not just about context-windows, but it is also about assigning dedicated roles, same as above. Focusing an LLM/Agent yields better results empirically
+
+	- Tools
+
+	- Cooperation
+
+		Communication between agents, the flow of Feedback, delegation, etc., are all important tasks in multi-agent systems
+
+	- Guardrails
+
+		We must explicitly define them for both: quality and security. Otherwise agents might run into "rabbit holes", i.e., unproductive repetitive loops, or result in a security breach of our systems
+
+	- Memory
+
+		Short-term memory: Memory during execution of a task. This kind of memory shares knowledge, activities, and learnings with other agents
+
+		Long-term memory: Persisted in a database. Agents access their dedicated database to reflect, learn and improve, i.e., self-improving agents
+
+		Entity memory: Dedicated store for nouns encountered during reasoning, such as: company name, person name, etc.
+
+What makes a great tool?
+
+	- Versatile
+
+		It must support wide variety of inputs, or in other words, we must be able to perform several actions for different set of inputs. Example: browser, updating database, etc. A tool which adds 2 numbers is not as versatile as a browser!
+
+		Typically, the tool takes in a fuzzy input (prompt) and outputs a strongly typed output like a webpage, JSON, numbers, etc, which can be fed to traditional software systems mimicking human inputs
+
+	- Fault-tolerant
+
+		Tools must have safe retries and handle failures gracefully
+
+	- Caching
+
+		Not just per-agent-caching, but cross-agent-tool-caching!
+
