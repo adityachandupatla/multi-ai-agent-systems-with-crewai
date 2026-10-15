@@ -1,5 +1,5 @@
 
-Compared to traditional software development, the AI-software development has fuzzy inputs/outputs and fuzzy transformations. The responses are also probabilistic instead of stochastic
+Compared to traditional software development, the AI-software development has fuzzy inputs/outputs and fuzzy transformations. The responses are also probabilistic.
 
 Here we define an agent as:
 
